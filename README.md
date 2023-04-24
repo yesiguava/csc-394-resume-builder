@@ -1,1 +1,1 @@
-# -csc-394-resume-builder
+# csc-394-resume-builder
