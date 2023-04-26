@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+  <head>
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="index_format.css">
+  </head>
+  <body>
+    <header  class="text-header">
+    <h1>Build Your Resume!</h1>
+    </header>
+
+    <main>
+        <!-- adds text area and button --> 
+        <form id="resumeInformation">
+            <p><label for="txtareaResumeInfo"> Write your information here...</label>
+                <br>
+                <textarea id="txtareaResumeInfo" rows="4" cols="50"></textarea></p>
+            <p><button type="button" onclick="generateResume()">Generate</button></p>
+        </form>
+
+        <!-- this is used to print results of generated resume --> 
+        <div id="results" class="format-output"> </div>
+
+        <!-- functions to make the text box and button working -->
+        <!-- also function for printing the results --> 
+        <script>
+            function generateResume() {
+                var resumeInfo;
+
+                resumeInfo = document.getElementById("txtareaResumeInfo").value;
+                document.getElementById("results").innerHTML = resumeInfo;
+            }
+        </script>
+    </main>
+  </body>
+</html>

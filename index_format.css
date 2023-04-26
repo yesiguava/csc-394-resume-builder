@@ -1,0 +1,14 @@
+body {
+    background-color: #F0FFFF;
+}
+
+.format-output {
+    border-style: double;
+    border-width: thick;
+    background-color: #FFFFFF;
+    width: 550px;
+}
+
+.text-header {
+    text-align: center;
+}
