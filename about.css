@@ -1,6 +1,8 @@
 /* Body styles */
 body {
   background-color: #ffffff;
+  height: 100%;
+  width: 100%;
   color: #333;
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
@@ -11,17 +13,19 @@ body {
 /* Header styles */
 h1,
 h2 {
-  color: #333;
-  font-weight: bold;
-  margin-top: 40px;
+	font-family: "Montserrat", sans-serif;
+	color: #333;
+	font-weight: bold;
+	margin-top: 40px;
 }
 
-/* Paragraph styles */
+ /* Paragraph styles */
 p {
   color: #666;
   font-size: 16px;
   margin: 20px 0;
 }
+
 
 /* Link styles */
 a {
@@ -33,55 +37,20 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Container styles */
-.container {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 40px;
-}
-
 /* Media queries for responsive design */
 @media (max-width: 600px) {
   .container {
     padding: 20px;
   }
-}
+} 
 
-/* Additional styles from HTML */
-body,
-h1 {
-  font-family: "Montserrat", sans-serif;
-}
 
-h2 {
-  font-family: "Montserrat", sans-serif;
-}
-
-img {
-  margin-bottom: -7px;
-}
-
-.w3-row-padding img {
-  margin-bottom: 12px;
-}
-
-html,
-body {
-  height: 100%;
-  overflow: hidden;
-}
-
-.w3-content {
-  height: 100%;
-}
 
 /* Footer Format */
 
 footer {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  display: flex;
+  justify-content: center;
 }
 
 footer i {
