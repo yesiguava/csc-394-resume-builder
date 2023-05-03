@@ -1,35 +1,72 @@
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html>
   <head>
-    <title>Resume Builder</title>
-    <link rel="stylesheet" href="index_format.css">
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <header  class="text-header">
-    <h1>Build Your Resume!</h1>
-    </header>
+  
+	<!-- Future Note: When logged in, users will be able to open a "Profile page in which they can edit profile info" -->
+  
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+        <i class="fa fa-remove"></i>
+      </a>
+      <div class="w3-bar-block w3-center">
+        <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
+        <a href="about.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+        <a href="qualifications.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Qualifications</a>
+		<a href="contact.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact Us</a>
+        <a href="signin.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Sign In/Register</a>
+      </div>
+    </nav>
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-content" style="max-width: 100%">
+      <!-- Header -->
+      <div class="w3-opacity">
+        <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()">
+          <i class="fa fa-bars"></i>
+        </span>
+        <div class="w3-clear"></div>
+        <header class="w3-center w3-margin-bottom">
+          <h1>
+            <b>Resume Builder</b>
+          </h1>
+          <p>
+            <b>Your Tailored Resume for any Job Listing</b>
+          </p>
+          <p class="w3-padding-16">
+		  <!-- Button to head to Resume Generator -->
+            <a href="resumebuilder.html"><button class="generate-btn">Build Resume Now</button></a>
+          </p>
+        </header>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-xlarge" style="margin-top:128px">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </footer>
+    <script>
+      // Open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.display = "block";
+      }
 
-    <main>
-        <!-- adds text area and button --> 
-        <form id="resumeInformation">
-            <p><label for="txtareaResumeInfo"> Write your information here...</label>
-                <br>
-                <textarea id="txtareaResumeInfo" rows="4" cols="50"></textarea></p>
-            <p><button type="button" onclick="generateResume()">Generate</button></p>
-        </form>
-
-        <!-- this is used to print results of generated resume --> 
-        <div id="results" class="format-output"> </div>
-
-        <!-- functions to make the text box and button working -->
-        <!-- also function for printing the results --> 
-        <script>
-            function generateResume() {
-                var resumeInfo;
-
-                resumeInfo = document.getElementById("txtareaResumeInfo").value;
-                document.getElementById("results").innerHTML = resumeInfo;
-            }
-        </script>
-    </main>
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+      }
+    </script>
   </body>
 </html>
