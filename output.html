@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
+    <title>Resume Builder</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="output.css">
   </head>
   <body>
   
@@ -36,37 +36,53 @@
         <div class="w3-clear"></div>
         <header class="w3-center w3-margin-bottom">
           <h1>
-            <b>Resume Builder</b>
+            <b>Here Is Your Custom Resume</b>
           </h1>
-          <p>
-            <b>Your Tailored Resume for any Job Listing</b>
-          </p>
-          <p class="w3-padding-16">
-		  <!-- Button to head to Resume Generator -->
-            <a href="qualifications.html"><button class="generate-btn">Build Resume Now</button></a>
-          </p>
+
+           <p class="w3-padding-16">
+		  <!-- User Input URL -->
+		<h1>Resume Information</h1>
+			<p>Name: <span id="name"></span></p>
+			<p>Email: <span id="email"></span></p>
+			<p>Phone: <span id="phone"></span></p>
+			<p>Address: <span id="address"></span></p>
+			<p>Education: <span id="education"></span></p>
+			<p>Experience: <span id="experience"></span></p>
+			<p>Skills: <span id="skills"></span></p>
+			<p>References: <span id="references"></span></p>
+			<p>Objective: <span id="objective"></span></p>
+			<p>Description: <span id="description"></span></p>
         </header>
       </div>
-    </div>
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-xlarge" style="margin-top:128px">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </footer>
+    </div> 
     <script>
-      // Open and close sidebar
-      function w3_open() {
+	
+     function w3_open() {
         document.getElementById("mySidebar").style.width = "100%";
         document.getElementById("mySidebar").style.display = "block";
       }
 
       function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
-      }
-    </script>
+      }	
+	  
+      // get the form data from the URL
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      // populate the HTML elements with the form data
+      document.getElementById("name").textContent = urlParams.get("name");
+      document.getElementById("email").textContent = urlParams.get("email");
+      document.getElementById("phone").textContent = urlParams.get("phone");
+      document.getElementById("address").textContent = urlParams.get("address");
+      document.getElementById("education").textContent = urlParams.get("education");
+      document.getElementById("experience").textContent = urlParams.get("experience");
+      document.getElementById("skills").textContent = urlParams.get("skills");
+      document.getElementById("references").textContent = urlParams.get("references");
+      document.getElementById("objective").textContent = urlParams.get("objective");
+      document.getElementById("description").textContent = urlParams.get("description");
+    </script>	
+	
+
   </body>
-</html>
+  </html>
