@@ -15,7 +15,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="url"] {
+/* input[type="url"] {
   display: block;
   width: 100%;
   padding: 12px;
@@ -45,7 +45,7 @@ button.generate-btn {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+ */
 button.generate-btn:hover {
   background-color: #45a049;
 }
