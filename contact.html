@@ -46,7 +46,7 @@
 	<div class="container my-5">
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
-				<form>
+				<form onsubmit="return submitForm()">
 					<div class="form-group">
 						<label for="name">Name:</label>
 						<input type="text" class="form-control" id="name" required>
@@ -56,12 +56,28 @@
 						<input type="email" class="form-control" id="email" required>
 					</div>
 					<div class="form-group">
-						<label for="message">Message:</label>
-						<textarea class="form-control" id="message" rows="5" required></textarea>
+										<label for="message">Message:</label>
+					<textarea class="form-control" id="message" rows="5" required></textarea>
 					</div>
 					<input type="submit" value="Submit">
 				</form>
 			</div>
+		</div>
+	</div>
+	
+	<!-- Popup confirmation message -->
+	<div id="confirmation-popup" class="w3-modal">
+		<div class="w3-modal-content">
+			<header class="w3-container w3-dark-gray">
+				<h2>Thank you!</h2>
+				<span onclick="document.getElementById('confirmation-popup').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+			</header>
+			<div class="w3-container">
+				<p>Your form has been submitted successfully.</p>
+			</div>
+			<footer class="w3-container w3-dark-gray">
+				<p></p>
+			</footer>
 		</div>
 	</div>
 	
@@ -84,6 +100,14 @@
       function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
       }
+	  
+	  // Popup confirmation message after submitting the form
+	  function submitForm() {
+		// You can use AJAX to submit the form instead of a normal form submission if you prefer
+		document.getElementById('confirmation-popup').style.display='block';
+		return false; // Prevent the page from reloading
+	  }
     </script>
   </body>
-</html>    
+</html>
+

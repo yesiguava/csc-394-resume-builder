@@ -20,6 +20,15 @@ form {
   margin-bottom: 20px;
 }
 
+#confirmation-popup {
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	background-color: $f5f5f5;
+	color: #2e2e2e;
+}
+
 label {
   display: block;
   margin-bottom: 5px;
