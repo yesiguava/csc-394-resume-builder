@@ -76,7 +76,7 @@ WSGI_APPLICATION = "resume_builder.wsgi.application"
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'localhost',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'koteczek',
         'HOST': '0.0.0.0',
