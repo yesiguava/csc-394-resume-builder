@@ -1,11 +1,18 @@
+body,
+h1 {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  width: 100:;
+}
+
 /* Style for the input form */
 form {
-  margin: 0 auto;
-  width: 1500px;
-  max-width: 1500px;
-  padding: 20px;
-  border: 2px solid #ddd;
-  background-color: #f5f5f5;
+	margin: 0 auto;
+	height: 100%;
+	width: 90%;
+	padding: 20px;
+	border: 2px solid #ddd;
+	background-color: #f5f5f5;
 }
 
 /* Style for the form labels */
@@ -36,7 +43,8 @@ input[type="submit"] {
   color: #fff;
   font-size: 18px;
   padding: 10px;
-  margin-left: 650px;
+  display: block;
+  margin : 0 auto;
   border: 1px;
   border-radius: 5px;
   cursor: pointer;
@@ -48,7 +56,8 @@ input[type="submit"]:hover {
 
 /* Style for the textareas */
 textarea {
-  height: 150px;
+  /* height: 150px; */
+  height: 100%;
 }
 
 /* Media query for smaller screens */
@@ -56,25 +65,6 @@ textarea {
   form {
     max-width: 100%;
   }
-}
-
-body,
-h1 {
-  font-family: "Montserrat", sans-serif;
-}
-img {
-  margin-bottom: -7px;
-}
-.w3-row-padding img {
-  margin-bottom: 12px;
-}
-html,
-body {
-  height: 100%;
-}
-.w3-content {
-  height: 10%;
-  width: 200%;
 }
 
 /* Footer Format */
