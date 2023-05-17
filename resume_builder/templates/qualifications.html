@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sign In / Register</title>
+    <title>Resume Input Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="qualifications.css">
-    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="static/css/qualifications.css">
   </head>
   <body>
     <!-- Sidebar -->
@@ -25,7 +24,7 @@
       </div>
     </nav>
     <!-- !PAGE CONTENT! -->
-    <div class="w3-content" style = "max-width: 100%">
+    <div class="w3-content" style="max-width: 100%">
       <!-- Header -->
       <div class="w3-opacity">
         <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()">
@@ -34,43 +33,53 @@
         <div class="w3-clear"></div>
         <header class="w3-center w3-margin-bottom">
           <h1>
-            <b>Sign In or Register</b>
+            <b>Resume/Job Posting Information</b>
           </h1>
+          <p>
+            <b>Enter in all of your relevant information below</b>
+          </p>
         </header>
       </div>
     </div>
-    <div class="w3-container" style = "max-width: 100%">
-      <main>
-		<!-- Sign In Section -->
-        <section>
-          <h2>Sign In</h2>
-          <form>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <input type="submit" value="Sign In">
-          </form>
-        </section>
-		<!-- Register Section -->
-        <section>
-          <h2>Register</h2>
-          <form>
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <br>
-            <input type="submit" value="Register">
-          </form>
-        </section>
-      </main>
+    <!-- User Input Section -->
+    <div class="w3-container w3-padding-64">
+	 <form action="output.html" method = "get">
+       <!-- <form> -->
+        <label for="name">Name:</label>
+        <input type="text" required id="name" name="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" required id="email" name="email">
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" required id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+		<small>Format: 123-456-7890</small>
+		<br>
+        <br>
+        <label for="address">Address:</label>
+        <input type="text" required id="address" name="address">
+		<br>
+        <label for="education">Education:</label>
+        <textarea id="education" required name="education"></textarea>
+        <br>
+        <label for="experience">Experience:</label>
+        <textarea id="experience" required name="experience"></textarea>
+        <br>
+        <label for="skills">Skills:</label>
+        <textarea id="skills" required name="skills"></textarea>
+        <br>
+        <label for="references">References:</label>
+        <textarea id="references" required name="references"></textarea>
+		<br>
+         <label for="objective">Title Of Job Position You Are Applying For</label>
+        <textarea id="objective" required name="objective"></textarea> 
+		<br>
+         <label for="description">Paste Job Description Below</label>
+        <textarea id="description" required name="description"></textarea> 
+        <br>
+        <input type="submit" value="Generate Resume">
+        <!--<button type="submit" class="btn btn-primary mt-3">Generate Resume</button>-->
+      </form>
     </div>
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-xlarge" style="margin-top:128px">
@@ -91,6 +100,6 @@
       function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
       }
-    </script>]
+    </script>
   </body>
 </html>
