@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Contact Us</title>
+    <title>Sign In / Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="qualifications.css">
+    <link rel="stylesheet" href="static/css/signin.css">
   </head>
   <body>
     <!-- Sidebar -->
@@ -24,7 +25,7 @@
       </div>
     </nav>
     <!-- !PAGE CONTENT! -->
-    <div class="w3-content" style="max-width: 100%">
+    <div class="w3-content" style = "max-width: 100%">
       <!-- Header -->
       <div class="w3-opacity">
         <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()">
@@ -33,55 +34,45 @@
         <div class="w3-clear"></div>
         <header class="w3-center w3-margin-bottom">
           <h1>
-            <b>Contact Us</b>
+            <b>Sign In or Register</b>
           </h1>
-          <p>
-            <b>If you have any questions, concerns, or issues, feel free to fill out the form below to contact us. We will follow up with you as soon as we can. Thank you!</b>
-          </p>
         </header>
       </div>
     </div>
-	  
-	  <!-- Page Content -->
-	<div class="container my-5">
-		<div class="row">
-			<div class="col-md-6 offset-md-3">
-				<form onsubmit="return submitForm()">
-					<div class="form-group">
-						<label for="name">Name:</label>
-						<input type="text" class="form-control" id="name" required>
-					</div>
-					<div class="form-group">
-						<label for="email">Email:</label>
-						<input type="email" class="form-control" id="email" required>
-					</div>
-					<div class="form-group">
-										<label for="message">Message:</label>
-					<textarea class="form-control" id="message" rows="5" required></textarea>
-					</div>
-					<input type="submit" value="Submit">
-				</form>
-			</div>
-		</div>
-	</div>
-	
-	<!-- Popup confirmation message -->
-	<div id="confirmation-popup" class="w3-modal">
-		<div class="w3-modal-content">
-			<header class="w3-container w3-dark-gray">
-				<h2>Thank you!</h2>
-				<span onclick="document.getElementById('confirmation-popup').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-			</header>
-			<div class="w3-container">
-				<p>Your form has been submitted successfully.</p>
-			</div>
-			<footer class="w3-container w3-dark-gray">
-				<p></p>
-			</footer>
-		</div>
-	</div>
-	
-	<!-- Footer -->
+    <div class="w3-container" style = "max-width: 100%">
+      <main>
+		<!-- Sign In Section -->
+        <section>
+          <h2>Sign In</h2>
+          <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Sign In">
+          </form>
+        </section>
+		<!-- Register Section -->
+        <section>
+          <h2>Register</h2>
+          <form>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Register">
+          </form>
+        </section>
+      </main>
+    </div>
+    <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-xlarge" style="margin-top:128px">
       <i class="fa fa-facebook-official w3-hover-opacity"></i>
       <i class="fa fa-instagram w3-hover-opacity"></i>
@@ -100,14 +91,6 @@
       function w3_close() {
         document.getElementById("mySidebar").style.display = "none";
       }
-	  
-	  // Popup confirmation message after submitting the form
-	  function submitForm() {
-		// You can use AJAX to submit the form instead of a normal form submission if you prefer
-		document.getElementById('confirmation-popup').style.display='block';
-		return false; // Prevent the page from reloading
-	  }
-    </script>
+    </script>]
   </body>
 </html>
-

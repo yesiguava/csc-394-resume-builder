@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from resume_builder.views import chat,index,about,contact,signin
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', index),
+    path('index.html', index),
+    path('about.html', about),
+    path('qualifications.html', chat),
+    path('contact.html', contact),
+    path('signin.html', signin),
 ]

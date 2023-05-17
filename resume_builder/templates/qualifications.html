@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
+    <title>Resume Input Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="static/css/qualifications.css">
   </head>
   <body>
-  
-	<!-- Future Note: When logged in, users will be able to open a "Profile page in which they can edit profile info" -->
-  
     <!-- Sidebar -->
     <nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
       <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
@@ -36,17 +33,53 @@
         <div class="w3-clear"></div>
         <header class="w3-center w3-margin-bottom">
           <h1>
-            <b>Resume Builder</b>
+            <b>Resume/Job Posting Information</b>
           </h1>
           <p>
-            <b>Your Tailored Resume for any Job Listing</b>
-          </p>
-          <p class="w3-padding-16">
-		  <!-- Button to head to Resume Generator -->
-            <a href="qualifications.html"><button class="generate-btn">Build Resume Now</button></a>
+            <b>Enter in all of your relevant information below</b>
           </p>
         </header>
       </div>
+    </div>
+    <!-- User Input Section -->
+    <div class="w3-container w3-padding-64">
+	 <form action="output.html" method = "get">
+       <!-- <form> -->
+        <label for="name">Name:</label>
+        <input type="text" required id="name" name="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" required id="email" name="email">
+        <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" required id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+		<small>Format: 123-456-7890</small>
+		<br>
+        <br>
+        <label for="address">Address:</label>
+        <input type="text" required id="address" name="address">
+		<br>
+        <label for="education">Education:</label>
+        <textarea id="education" required name="education"></textarea>
+        <br>
+        <label for="experience">Experience:</label>
+        <textarea id="experience" required name="experience"></textarea>
+        <br>
+        <label for="skills">Skills:</label>
+        <textarea id="skills" required name="skills"></textarea>
+        <br>
+        <label for="references">References:</label>
+        <textarea id="references" required name="references"></textarea>
+		<br>
+         <label for="objective">Title Of Job Position You Are Applying For</label>
+        <textarea id="objective" required name="objective"></textarea> 
+		<br>
+         <label for="description">Paste Job Description Below</label>
+        <textarea id="description" required name="description"></textarea> 
+        <br>
+        <input type="submit" value="Generate Resume">
+        <!--<button type="submit" class="btn btn-primary mt-3">Generate Resume</button>-->
+      </form>
     </div>
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-xlarge" style="margin-top:128px">
