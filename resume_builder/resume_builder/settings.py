@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-=1)(5!2dgpwa@am+fmb-0p6f!g#fx&&p+gz258=55bi80no+7_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = "resume_builder.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'koteczek',
+        'HOST': '0.0.0.0',
+        'PORT': '5432',
     }
 }
 
