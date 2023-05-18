@@ -1,3 +1,4 @@
 #Ignore files related to API keys
 .env
 venv
+resume_builder/resume_builder/__pycache__/*
