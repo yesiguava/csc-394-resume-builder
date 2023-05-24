@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from resume_builder.views import chat,index,about,contact,signin
+from resume_builder.views import qualifications,index,about,contact,signin,output_view,submit_form
 
 
 urlpatterns = [
@@ -24,7 +24,9 @@ urlpatterns = [
     path('', index),
     path('index.html', index),
     path('about.html', about),
-    path('qualifications.html', chat),
+    path('qualifications.html', qualifications),
     path('contact.html', contact),
     path('signin.html', signin),
+    path('output/', output_view, name='output-name'),
+    path('submit/', submit_form)
 ]

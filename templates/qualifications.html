@@ -43,42 +43,44 @@
     </div>
     <!-- User Input Section -->
     <div class="w3-container w3-padding-64">
-	 <form action="output.html" method = "get">
+	 <form action="/submit/" method = "post">
        <!-- <form> -->
+        {% csrf_token %}
         <label for="name">Name:</label>
-        <input type="text" required id="name" name="name">
+        <input type="text" required id="name" name="user_input">
         <br>
         <label for="email">Email:</label>
-        <input type="email" required id="email" name="email">
+        <input type="email" required id="email" name="user_input">
         <br>
         <label for="phone">Phone:</label>
-        <input type="tel" required id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <input type="tel" required id="phone" name="user_input" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 		<small>Format: 123-456-7890</small>
 		<br>
         <br>
         <label for="address">Address:</label>
-        <input type="text" required id="address" name="address">
+        <input type="text" required id="address" name="user_input">
 		<br>
         <label for="education">Education:</label>
-        <textarea id="education" required name="education"></textarea>
+        <textarea id="education" required name="user_input"></textarea>
         <br>
         <label for="experience">Experience:</label>
-        <textarea id="experience" required name="experience"></textarea>
+        <textarea id="experience" required name="user_input"></textarea>
         <br>
         <label for="skills">Skills:</label>
-        <textarea id="skills" required name="skills"></textarea>
+        <textarea id="skills" required name="user_input"></textarea>
         <br>
         <label for="references">References:</label>
-        <textarea id="references" required name="references"></textarea>
+        <textarea id="references" required name="user_input"></textarea>
 		<br>
          <label for="objective">Title Of Job Position You Are Applying For</label>
-        <textarea id="objective" required name="objective"></textarea> 
+        <textarea id="objective" required name="user_input"></textarea> 
 		<br>
          <label for="description">Paste Job Description Below</label>
-        <textarea id="description" required name="description"></textarea> 
+        <textarea id="description" required name="user_input"></textarea> 
         <br>
-        <input type="submit" value="Generate Resume">
+        <!-- <input type="submit" value="Generate Resume">-->
         <!--<button type="submit" class="btn btn-primary mt-3">Generate Resume</button>-->
+        <button type="submit" class="btn btn-primary mt-3">Generate Resume</button>
       </form>
     </div>
     <!-- Footer -->
