@@ -17,16 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from resume_builder.views import qualifications,index,about,contact,signin,output_view,submit_form
+from . import views
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', index),
+    path("", views.index),
     path('index.html', index),
     path('about.html', about),
     path('qualifications.html', qualifications),
     path('contact.html', contact),
     path('signin.html', signin),
     path('output/', output_view, name='output-name'),
-    path('submit/', submit_form)
+    path('submit/', submit_form),
+    path("register", views.register_request, name="register"),
+    path("login", views.login_request, name="login")
 ]
