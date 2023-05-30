@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'crispy_forms',
+    'crispy_bootstrap4',
+    'user',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -82,8 +84,8 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'koteczek',
-        #'HOST': '0.0.0.0',
-        'HOST': 'localhost',
+        'HOST': '0.0.0.0',
+        #'HOST': 'localhost',
         'PORT': '5432',
     }
 }

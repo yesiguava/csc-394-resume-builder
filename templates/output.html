@@ -41,20 +41,21 @@
 
            <p class="w3-padding-16">
 		  <!-- User Input URL -->
+      {% csrf_token %}
 		  <h1>Resume Information</h1>
-			<!--<p>Name:{{user_input}} <span id="name"></span></p>
-			<p>Email:{{user_input}} <span id="email"></span></p>
-			<p>Phone: <span id="phone"></span></p>
-			<p>Address: <span id="address"></span></p>
-			<p>Education: <span id="education"></span></p>
-			<p>Experience: <span id="experience"></span></p>
-			<p>Skills: <span id="skills"></span></p>
-			<p>References: <span id="references"></span></p>
-			<p>Objective: <span id="objective"></span></p>
-			<p>Description: <span id="description"></span></p> -->
-      <p>
+			<p>Name:{{Name}} <span id="name"></span></p>
+			<p>Email:{{Email}} <span id="email"></span></p>
+			<p>Phone:{{Phone}} <span id="phone"></span></p>
+			<p>Address:{{Address}} <span id="address"></span></p>
+			<p>Education:{{Education}} <span id="education"></span></p>
+			<p>Experience:{{Experience}} <span id="experience"></span></p>
+			<p>Skills:{{Skills}} <span id="skills"></span></p>
+			<p>References:{{References}} <span id="references"></span></p>
+			<p>Objective:{{Objective}} <span id="objective"></span></p>
+			<p>Description:{{Description}} <span id="description"></span></p>
+      {% comment %} <p>
         {{chat_response}}
-      </p>
+      </p> {% endcomment %}
         </header>
       </div>
     </div> 

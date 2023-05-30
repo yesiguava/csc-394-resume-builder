@@ -16,21 +16,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from resume_builder.views import qualifications,index,about,contact,signin,output_view,submit_form
+from resume_builder.views import (
+    index_view,
+    about_view,
+    qualifications_view,
+    contact_view,
+    signin_view,
+    output_view,
+    submit_form
+)
 from . import views
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', index),
-    path("", views.index),
-    path('index.html', index),
-    path('about.html', about),
-    path('qualifications.html', qualifications),
-    path('contact.html', contact),
-    path('signin.html', signin),
+    path('', index_view, name='index'),
+    path('index.html', index_view, name='index'),
+    path('about.html', about_view, name='about'),
+    path('qualifications.html', qualifications_view, name='qualifications'),
+    path('contact.html', contact_view, name='contact'),
+    path('signin.html', signin_view, name='signin'),
     path('output/', output_view, name='output-name'),
-    path('submit/', submit_form),
-    path("register", views.register_request, name="register"),
-    path("login", views.login_request, name="login")
+    path('submit/', submit_form, name='submit_form'),
+    path('register/', views.register_request, name='register'),
+    path('login/', views.login_request, name='login')
 ]

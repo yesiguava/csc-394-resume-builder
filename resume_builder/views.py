@@ -3,42 +3,56 @@ from .forms import NewUserForm
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-import openai, os
+import openai, os, json
 from dotenv import load_dotenv
+from user.models import User
 load_dotenv()
 
 #this request displays index page as main page and "home" redirection from nav bar
-def index(request):
-    return render(request, 'index.html', {})
+def index_view(request):
+    return render(request, 'index.html')
 
 #this request displays about page as "about" redirection from nav bar
-def about(request):
-    return render(request, 'about.html', {})
+def about_view(request):
+    return render(request, 'about.html')
 
+#this request displays about page as "contact" redirection from nav bar
+def contact_view(request):
+    return render(request, 'contact.html')
 
-def contact(request):
-    return render(request, 'contact.html', {})
+#this request displays about page as "signin" redirection from nav bar
+def signin_view(request):
+    return render(request, 'signin.html')
 
+#this request displays about page as "qualifications" redirection from nav bar
+def qualifications_view(request):
+    return render(request, 'qualifications.html')
 
-def signin(request):
-    return render(request, 'signin.html', {})
-
-def qualifications(request):
-    return render(request, 'qualifications.html', {})
-
-def output_view(request, message):
-    print(message)
-    return render(request, 'output.html', {})
+#this request displays about page as "output" redirection after submitting qualifications
+def output_view(request):
+    print(User.objects.last())
+    person = User.objects.last()
+    jayson = json.loads(person.resume_info)
+    print(jayson['name'])
+    context = {'Name': jayson['name'], 'Email': jayson['email'],
+               'Phone': jayson['phone'], 'Address' : jayson['address'],
+               'Education': jayson['education'], 'Experience': jayson['experience'],
+               'Skills': jayson['skills'], 'References': jayson['references'],
+               'Objective': jayson['objective'], 'Description': jayson['description']}
+    return render(request, 'output.html', context)
 
 #this request will display qualifications and need to figure out routing of response from api to another page
 api_key = os.getenv('api_key', None)
 
+#handles chatgpt api call sending in qualifications form as json and retrieving then storing json response into database
 def submit_form(request):
     chat_response = None
     if api_key is not None and request.method == 'POST':
         openai.api_key = api_key
-        user_input = request.POST.get('user_input')
-        prompt = f"Please generate a resume using the following information: {user_input}"
+        user_input = request.POST.dict()
+        user_input.pop('csrfmiddlewaretoken')
+        print(request.POST.dict())
+        prompt = f"Please generate a resume using the following information and structure it in JSON format: {user_input}"
 
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
@@ -48,16 +62,18 @@ def submit_form(request):
             messages = [
             {'role': 'user', 'content': prompt}
             ],
-            temperature=0.5
+            temperature=1
         )
+        print(prompt)
         print(response)
 
         chat_response = response["choices"][0]["message"]["content"]
     
         if chat_response is not None:
-            context={'chat_response': chat_response}
-            print(prompt)
-            return render(request,'output.html', context)
+            json_input = User.objects.create(resume_info=chat_response)
+            json_input.save()
+            print(json_input)
+            return redirect('output-name')
 
 
     print(request.POST)
@@ -71,10 +87,10 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect("main:homepage")
+			return redirect('login')
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
-	return render (request=request, template_name="main/register.html", context={"register_form":form})
+	return render (request, 'register.html', {"register_form":form})
 
 # This is allows a user to login
 def login_request(request):
@@ -93,4 +109,4 @@ def login_request(request):
 		else:
 			messages.error(request,"Invalid username or password.")
 	form = AuthenticationForm()
-	return render(request=request, template_name="main/login.html", context={"login_form":form})
+	return render(request, 'login.html', {"login_form":form})
